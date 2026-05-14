@@ -1,0 +1,58 @@
+:root{
+
+/* LIGHT THEME */
+
+/* BRAND */
+
+--semantic-brand: var(--primary-800);
+--semantic-hover: var(--primary-950);/* Generalemente es de un tono mas alto que el brand */
+--semantic-brand-soft: var(--primary-200);
+--semantic-brand-soft-hover: var(--primary-350);
+
+/* BACKGROUND */
+
+--semantic-background: var(--white); /* Fondo de toda la aplicaciòn */
+--semantic-surface: var(--gray-200); /* Fondo de modales, cards, containers */
+--semantic-surface-muted: var(--gray-400); /* Zonas secundarias, con menos importancia */
+--semantic-background-inverse: var(--black);
+
+/* TEXT */
+
+--semantic-text-primary: var(--gray-900); /* Color princpial de lectura, titulos, texto base del documento */
+--semantic-text-secondary: var(--gray-700); /* Textos menos dominantes */
+--semantic-text-secondary: var(--gray-500); /* Texto deshabilitado por ejemplo */
+--semantic-text-secondary: var(--white); /* Texto Invertido */
+
+/* BORDER */
+
+--semantic-border: var(--gray-400); /*Borde principal de todos los componentes*/
+--semantic-border-strong: var(--gray-700); /*Bordes màs fuertes*/
+
+/* FOCUS */
+
+--semantic-focus-ring: var(--primary-700);
+
+/* STATE */
+
+--semantic-succes: var(--primary-950);
+--semantic-warning: var(--terciary-950);
+--semantic-error: var(--secondary-950);
+
+/* TYPOGRAPHY */
+
+--semantic-font-size-display: var(--fs-xxl);
+/* Texto de alto impacto, texto protagonista, hero, nùmeros grandes */
+--semantic-font-size-h1: var(--fs-lg);
+--semantic-font-size-h2: var(--fs-md);
+--semantic-font-size-h3: var(--fs-sm);
+--semantic-font-size-body: var(--fs-xs);
+--semantic-font-size-medium: var(--fs-xxs);
+--semantic-font-size-small: var(--fs-xxxs);
+--semantic-font-size-caption: var(--fs-xxxxs); /* Caption el texto auxiliar mas pequeño */
+
+/* FONT WEIGHT */
+
+--semantic-font-weight-heading: var(--font-weight-bold);
+--semantic-font-weight-body: var(--font-weight-regular);
+--semantic-font-weight-label: var(--font-weight-regular);
+}

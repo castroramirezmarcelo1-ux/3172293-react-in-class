@@ -1,0 +1,96 @@
+
+:root {
+    /* Primary Color */
+    --primary-950: #431407;
+    --primary-900: #7C2D12;
+    --primary-800: #9A3412;
+    --primary-700: #C2410C;
+    --primary-600: #EA580C;
+    --primary-500: #F97316;
+    --primary-400: #FB923C;
+    --primary-300: #FDBA74;
+    --primary-200: #FED7AA;
+    --primary-100: #FFEAD5;
+    --primary-50: #FFF7ED;
+
+    /* Secondary Color */
+    --secondary-950: #3D2102;
+    --secondary-900: #633204;
+    --secondary-800: #7E3E06;
+    --secondary-700: #9F580A;
+    --secondary-600: #C27803;
+    --secondary-500: #E3A008;
+    --secondary-400: #F4BF4A;
+    --secondary-300: #FFD66B;
+    --secondary-200: #FCE588;
+    --secondary-100: #FFF3C4;
+    --secondary-50: #FFFBEA;
+
+    /* Tertiary Color */
+    --terciary-950: #450A0A;
+    --terciary-900: #7F1D1D;
+    --terciary-800: #991B1B;
+    --terciary-700: #B91C1C;
+    --terciary-600: #DC2626;
+    --terciary-500: #EF4444;
+    --terciary-400: #F87171;
+    --terciary-300: #FCA5A5;
+    --terciary-200: #FECACA;
+    --terciary-100: #FEE2E2;
+    --terciary-50: #FEF2F2;
+
+    /* Basic Color */
+    --white: #fff;
+    --black: #000;
+    --gray-950: #101010;
+    --gray-900: #262626;
+    --gray-800: #3b3b3b;
+    --gray-700: #515151;
+    --gray-600: #676767;
+    --gray-500: #7d7d7d;
+    --gray-400: #929292;
+    --gray-300: #a8a8a8;
+    --gray-200: #bebebe;
+    --gray-100: #d4d4d4;
+    --gray-50: #e9e9e9;
+
+    /* Typography */
+    --main-font: Helvetica, Arial, sans-serif;
+    --secondary-font: Calibri, Helvetica, Arial;
+
+    /* Font weights crudos */
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-bold: 700;
+
+
+
+    /* Font Size */
+    --fs-xxxxl: 5rem; /* Ultra grande */
+    --fs-xxxl: 4rem; /* Super grande */
+    --fs-xxl: 3rem; /* Extra grande */
+    --fs-xl: 2.5rem; /* Muy Grande */
+    --fs-lg: 2rem; /* Grande */
+    --fs-md: 1.5rem; /* Mediano */
+    --fs-sm: 1.25rem; /* Pequeño */
+    --fs-xs: 1rem; /* Base */
+    --fs-xxs: 0.875rem; /* Muy pequeño 14px */
+    --fs-xxxs: 0.75rem; /* Extra extra pequeño 12px */
+    --fs-xxxxs: 0.5rem; /* Minimo 8px */
+
+}
+
+/* Globals */
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+*, *:before *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: var(--main-font);
+    margin: 0 0;
+}
