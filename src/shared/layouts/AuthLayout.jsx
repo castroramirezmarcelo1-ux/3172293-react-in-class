@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import authBg from "@/assets/images/bg-1.png";
 import { Input } from "@/shared";
+import { Button } from "@/shared";
 
 export default function AuthLayout() {
     return (
@@ -18,8 +19,57 @@ export default function AuthLayout() {
                             label="Nombre"
                             type="text"
                             placeholder="Ingrese su nombre"
-                            htmlFor="Campo de nombre"
+                            htmlFor="user-name"
+                            size="md"
                         />
+                        <Input
+                            label="Correo"
+                            type="email"
+                            placeholder="Ingrese su correo"
+                            htmlFor="user-email"
+                            size="md"
+                        />
+                        <Input
+                            label="Telèfono"
+                            type="tel"
+                            placeholder="Ingrese su nùmmero de telèfono"
+                            htmlFor="user-phone"
+                            size="md"
+                        />
+                        <Input
+                            label="Borrar Tipo de documento"
+                            type="text"
+                            placeholder="Ingrese su nombre"
+                            htmlFor="name"
+                            size="md"
+                        />
+                        <Input
+                            label="Documento"
+                            type="text"
+                            placeholder="Ingrese su nùmero de documento"
+                            htmlFor="user-document-number"
+                            size="md"
+                        />
+
+                        {/* Actions */}
+                        <div>
+                            <Button
+                                variant="secondary"
+                                size="sm"
+                                type="button"
+                                onClick={() => console.log("Se oprimio cancelar")}
+                                >
+                                    Cancelar
+                            </Button>
+                            <Button
+                                variant="primary"
+                                size="md"
+                                type="submit"
+                                onClick={() => console.log("Se orpmio el submit")}
+                            >
+                                Guardar
+                            </Button>
+                        </div>
                         <h1>Hola que tal</h1>
                     <Outlet />
                 </main>

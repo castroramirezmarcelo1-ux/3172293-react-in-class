@@ -1,58 +1,58 @@
 
 :root {
     /* Primary Color */
-    --primary-950: #431407;
-    --primary-900: #7C2D12;
-    --primary-800: #9A3412;
-    --primary-700: #C2410C;
-    --primary-600: #EA580C;
-    --primary-500: #F97316;
-    --primary-400: #FB923C;
-    --primary-300: #FDBA74;
-    --primary-200: #FED7AA;
-    --primary-100: #FFEAD5;
-    --primary-50: #FFF7ED;
+    --color-primary-950: #431407;
+    --color-primary-900: #7C2D12;
+    --color-primary-800: #9A3412;
+    --color-primary-700: #C2410C;
+    --color-primary-600: #EA580C;
+    --color-primary-500: #F97316;
+    --color-primary-400: #FB923C;
+    --color-primary-300: #FDBA74;
+    --color-primary-200: #FED7AA;
+    --color-primary-100: #FFEAD5;
+    --color-primary-50: #FFF7ED;
 
     /* Secondary Color */
-    --secondary-950: #3D2102;
-    --secondary-900: #633204;
-    --secondary-800: #7E3E06;
-    --secondary-700: #9F580A;
-    --secondary-600: #C27803;
-    --secondary-500: #E3A008;
-    --secondary-400: #F4BF4A;
-    --secondary-300: #FFD66B;
-    --secondary-200: #FCE588;
-    --secondary-100: #FFF3C4;
-    --secondary-50: #FFFBEA;
+    --color-secondary-950: #3D2102;
+    --color-secondary-900: #633204;
+    --color-secondary-800: #7E3E06;
+    --color-secondary-700: #9F580A;
+    --color-secondary-600: #C27803;
+    --color-secondary-500: #E3A008;
+    --color-secondary-400: #F4BF4A;
+    --color-secondary-300: #FFD66B;
+    --color-secondary-200: #FCE588;
+    --color-secondary-100: #FFF3C4;
+    --color-secondary-50: #FFFBEA;
 
     /* Tertiary Color */
-    --terciary-950: #450A0A;
-    --terciary-900: #7F1D1D;
-    --terciary-800: #991B1B;
-    --terciary-700: #B91C1C;
-    --terciary-600: #DC2626;
-    --terciary-500: #EF4444;
-    --terciary-400: #F87171;
-    --terciary-300: #FCA5A5;
-    --terciary-200: #FECACA;
-    --terciary-100: #FEE2E2;
-    --terciary-50: #FEF2F2;
+    --color-terciary-950: #450A0A;
+    --color-terciary-900: #7F1D1D;
+    --color-terciary-800: #991B1B;
+    --color-terciary-700: #B91C1C;
+    --color-terciary-600: #DC2626;
+    --color-terciary-500: #EF4444;
+    --color-terciary-400: #F87171;
+    --color-terciary-300: #FCA5A5;
+    --color-terciary-200: #FECACA;
+    --color-terciary-100: #FEE2E2;
+    --color-terciary-50: #FEF2F2;
 
     /* Basic Color */
-    --white: #fff;
-    --black: #000;
-    --gray-950: #101010;
-    --gray-900: #262626;
-    --gray-800: #3b3b3b;
-    --gray-700: #515151;
-    --gray-600: #676767;
-    --gray-500: #7d7d7d;
-    --gray-400: #929292;
-    --gray-300: #a8a8a8;
-    --gray-200: #bebebe;
-    --gray-100: #d4d4d4;
-    --gray-50: #e9e9e9;
+    --color-white: #fff;
+    --color-black: #000;
+    --color-gray-950: #101010;
+    --color-gray-900: #262626;
+    --color-gray-800: #3b3b3b;
+    --color-gray-700: #515151;
+    --color-gray-600: #676767;
+    --color-gray-500: #7d7d7d;
+    --color-gray-400: #929292;
+    --color-gray-300: #a8a8a8;
+    --color-gray-200: #bebebe;
+    --color-gray-100: #d4d4d4;
+    --color-gray-50: #e9e9e9;
 
     /* Typography */
     --main-font: Helvetica, Arial, sans-serif;
@@ -80,17 +80,3 @@
 
 }
 
-/* Globals */
-html {
-    box-sizing: border-box;
-    font-size: 62.5%;
-}
-*, *:before *:after {
-    box-sizing: inherit;
-}
-
-body {
-    font-size: 1.6rem;
-    font-family: var(--main-font);
-    margin: 0 0;
-}
