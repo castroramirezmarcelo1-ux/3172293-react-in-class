@@ -1,7 +1,9 @@
 import { Outlet } from "react-router-dom";
 import authBg from "@/assets/images/bg-1.png";
-import { Input } from "@/shared";
-import { Button } from "@/shared";
+import { Input, Button } from "@/shared";
+import DeleteCounter2 from "../components/DeleteCounter2";
+import EfectoDemo from "../components/EffectDemo";
+
 
 export default function AuthLayout() {
     return (
@@ -37,7 +39,7 @@ export default function AuthLayout() {
                             size="md"
                         />
                         <Input
-                            label="Borrar Tipo de documento"
+                            label="Tipo de documento"
                             type="text"
                             placeholder="Ingrese su nombre"
                             htmlFor="name"
@@ -69,7 +71,17 @@ export default function AuthLayout() {
                             >
                                 Guardar
                             </Button>
+                        </div>{/*Actions*/}
+
+                        { /*Implementacion del estado useState*/}
+                        <div className="mt-10"> 
+                            <h1>Ejemplo useState</h1>
+                        <DeleteCounter2/>
                         </div>
+
+                        <EfectoDemo/>
+                        
+
                         <h1>Hola que tal</h1>
                     <Outlet />
                 </main>
