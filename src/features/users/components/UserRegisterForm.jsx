@@ -1,10 +1,11 @@
 // UserRegisterForm componente para registrar un usuario
 
 import { useState, useEffect } from "react"
-import { Input, Select, Checkbox, Button, IconButton } from "@shared";
+import { Input, Select, Checkbox, Button } from "@/shared";
 import { getDocumentTypes } from "@/services/selectService";
 // import {useNavigate } from "react-router-dom"
 import { userSchema } from "../schemas/userSchema";
+import { User, PencilLine } from "lucide-react"
 
 export default function UserRegisterForm(){
     // Estado del formulario
@@ -51,10 +52,10 @@ export default function UserRegisterForm(){
         
         setFormData((prev) =>({
             // Se copian todos los valores anteriores al estado
-        ...prev,
+            ...prev,
     
         // Se actualiza unicamente lo que cambio
-        [name]: type === "checkbox" ? checked : value,
+            [name]: type === "checkbox" ? checked : value,
         }));
     };
 
@@ -70,26 +71,26 @@ export default function UserRegisterForm(){
     
     const handleSubmit = async (e) => {
 //       // Evita que el formulario recargue la pagina
-    e.preventDefault(); 
+        e.preventDefault(); 
     
 //     // Validamos los datos del formulario contra el esquema Zod
 //     // safeParse NO lanza excepcion, retorna un objeto controlado
 
-    const result = userSchema.safeParse(formData);
+        const result = userSchema.safeParse(formData);
 
 //     // Verificar en consola si el estado esta funcionando correctamente
     // console.log(result);
 
 //     // Si la validacion falla 
-    if (!result.success) {
+        if (!result.success) {
 //         // Objeto donde almacenaremos los errores del campo
-        const fieldErrors = {};
+            const fieldErrors = {};
 
 //     // Recorremos cada error generado por Zod
-    result.error.issues.forEach((issue) => {
+            result.error.issues.forEach((issue) => {
 //         // issue.path[0] corresponde al nombre del campo
 //         // issue.message contiene el mensaje de error definido en el schema
-        fieldErrors[issue.path[0]] = issue.message;
+                fieldErrors[issue.path[0]] = issue.message;
     });
     
 //     // Actualizamos el estado de errores para mostrarlos en la UI
@@ -144,7 +145,7 @@ export default function UserRegisterForm(){
 
 return (
         <div className="grid items-center justify-center">
-            <h1 className="mx-auto my-12 text-title font-bold">Registro de usuarios</h1>
+            <h1 className="mx-auto my-12 text-title font-heading font-bold">Registro de usuarios</h1>
 
             <form 
                 action=""
@@ -184,11 +185,12 @@ return (
                 />
                 <Select 
                 label="Tipo de Documento"
-                name="userDocumentsType"
+                name="userDocumentType"
                 value = {formData.userDocumentType}
-                htmlFor="userDocumentsType"
+                htmlFor="userDocumentType"
                 options={documentTypes}
                 error = {errors.userDocumentType}
+                onChange={handleChange}
                 />
                 <Input 
                 label="Documento"
@@ -234,11 +236,11 @@ return (
                     checked={formData.isActive}
                     onChange={handleChange}
                 />
-            <div>
+            </div>
                 
                 {/*{Actions}*/}
                 
-            <div className="flex gap-6 items center">
+            <div className="flex gap-6 items-center">
             
             <Button
                 variant="secondary"
@@ -256,10 +258,14 @@ return (
                 >
                 Guardar
             </Button>
-                    </div>
-                <IconButton/>
+                <User/>
+                <PencilLine/>
+            </div>
+
+            {/** Icono */}
+
             </form>
-    </div>
+        </div>
         
     );
 }

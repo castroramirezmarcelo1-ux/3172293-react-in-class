@@ -12,6 +12,7 @@ export default function Input({
             // Estos valores deben ser con variables
         primary: `
             border-brand
+            bg-background
         `,
         secondary: `
             border-red-950
@@ -53,6 +54,7 @@ export default function Input({
                                 ? "mb-0"
                                 : "mb-1"
                     }
+                    ${error ? "border-red-800" : "text-caption"}
                 `}
                 
             >
@@ -91,7 +93,6 @@ export default function Input({
                 className={`
                     relative
                     w-full
-                    h-10
                     rounded-md
                     border
                     px-4

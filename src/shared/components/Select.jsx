@@ -34,7 +34,7 @@ export default function Select({
                 id="htmlFor"
                 className="
                     w-80
-                    h12
+                    h-12
                     rounded-md
                     border
                     border-gray-400

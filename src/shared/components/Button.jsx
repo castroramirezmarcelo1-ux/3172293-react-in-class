@@ -10,7 +10,7 @@ export default function Button ({
 
     const variants = {
         primary: "bg-brand text-inverse hover:bg-brand-hover",
-        secondary: "bg-brand-soft text-primary hover:bg-brand-soft-hover"
+        secondary: "border border-brand bg-brand-soft text-primary hover:bg-brand-soft-hover"
     };
 
     const sizes = {
@@ -21,7 +21,8 @@ export default function Button ({
             before:-inset-y-[8px] before:-inset-x-[0px]
             `,
 
-        md: "h-10 px-4 before:absolute before:content-['']before:-inset-y-[4px] before:-inset-x-[0px] "
+        md: `h-10 px-4 before:absolute before:content-['']
+        before:-inset-y-[4px] before:-inset-x-[0px] `
     }
     return(
         <button
@@ -31,6 +32,8 @@ export default function Button ({
                     inline-flex items-center justify-center
                     rounded-md
                     translation-colors
+
+                    hover:bg-red-400
                     ${variants[variant]}
                     ${sizes[size]}
                     `}

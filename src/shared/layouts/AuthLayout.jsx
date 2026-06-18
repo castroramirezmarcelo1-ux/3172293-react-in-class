@@ -5,11 +5,10 @@ import {
     Input, 
     Button, 
     Select,
-    Checkbox} from "@/shared";
+    Checkbox } from "@/shared";
 import {getDocumentTypes} from "../../services/selectService";
 
 export default function AuthLayout() {
-
 
     //Estado para los tipos de documento
     const[documentTypes, setDocumentTypes] = useState([])
@@ -35,7 +34,8 @@ export default function AuthLayout() {
                             type="text"
                             placeholder="Ingrese su nombre"
                             htmlFor="user-name"
-                            size="md"
+                            variant="primary"
+                            size="lg"
                         />
                         <Input
                             label="Correo"
