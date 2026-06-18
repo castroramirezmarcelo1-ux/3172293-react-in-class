@@ -2,8 +2,11 @@
 
 export default function Select({
     label,
+    error,
     htmlFor,
     name,
+    onchange,
+    value,
     options = [],
 }){
     
@@ -24,18 +27,22 @@ export default function Select({
             )}
 
             {/*Select*/}
-            <select name={name}
-            id="htmlFor"
-            className="
-                w-full
-                h12
-                rounded-md
-                border
-                px-4
-                
-                hover:border
-                hover:border-2
-                hover:border-focus-border
+            <select 
+                onChange={onchange}
+                value={value}
+                name={name}
+                id="htmlFor"
+                className="
+                    w-80
+                    h12
+                    rounded-md
+                    border
+                    border-gray-400
+                    px-4
+                    bg-gray-100
+                    
+                    hover:border-2
+                    hover:bg-[var(--gray-50)]
             "
             >
 
@@ -48,6 +55,11 @@ export default function Select({
             ))}
 
             </select>
+
+            {error && (
+                    <p className="text-caption text-red-800 place-self-start mt-2">{error}</p>
+            )}
+
         </div>
     );
 }

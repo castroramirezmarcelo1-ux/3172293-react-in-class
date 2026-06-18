@@ -1,16 +1,11 @@
-import {useState, useEffect } from "react";
-
+import { useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import authBg from "@/assets/images/bg-1.png";
 import { 
     Input, 
     Button, 
-    DeleteCounter2,
     Select,
-    Checkbox} 
-    from "@/shared";
-
-
+    Checkbox} from "@/shared";
 import {getDocumentTypes} from "../../services/selectService";
 
 export default function AuthLayout() {
@@ -47,29 +42,33 @@ export default function AuthLayout() {
                             type="email"
                             placeholder="Ingrese su correo"
                             htmlFor="user-email"
-                            size="md"
                         />
                         <Input
                             label="Telèfono"
                             type="tel"
                             placeholder="Ingrese su nùmmero de telèfono"
                             htmlFor="user-phone"
-                            size="md"
                         />
                         <Input
-                            label="Tipo de documento"
+                            label="Borrar tipo documento"
                             type="text"
-                            placeholder="Ingrese su nombre"
-                            htmlFor="name"
-                            size="md"
+                            placeholder="Escribe tu nombre"
+                            htmlFor= "Campo de nombre"
                         />
-                        <Input
+                        <Input 
                             label="Documento"
                             type="text"
-                            placeholder="Ingrese su nùmero de documento"
-                            htmlFor="user-document-number"
-                            size="md"
+                            placeholder="Escribe tu numero de documento"
+                            htmlFor= "user-document-number"
+                    />
+                        <Select 
+                            label="Tipos de documento"
+                            name="userDocumentTypes"
+                            htmlFor="userDocumentTypes"
+                            options={documentTypes}
                         />
+
+                        {/* <Checkbox/> */}
 
                         {/* Actions */}
                         <div>
@@ -81,41 +80,19 @@ export default function AuthLayout() {
                                 >
                                     Cancelar
                             </Button>
+
                             <Button
                                 variant="primary"
                                 size="md"
                                 type="submit"
                                 onClick={() => console.log("Se orpmio el submit")}
-                            >
-                                Guardar
+                                >
+                                    Guardar
                             </Button>
                         </div>{/*Actions*/}
 
-                        { /*Implementacion del estado useState*/}
-                        <div className="mt-10"> 
-                            <h1>Ejemplo sin useState</h1>
-                        <DeleteCounter2/>
-                        </div>
+                        <Checkbox/>
 
-                        {/* <EfectoDemo/> */}
-                        
-
-                        <h1>Hola que tal</h1>
-
-                        {/* Implementaciòn de useEffect */}
-                        {/* <div className="mt-12">
-                            <h1>Este es mi efecto</h1>
-                            <EffectDemo/>
-                        </div> */}
-
-                        {/* <CounterEffect/> */}
-
-                        <Select
-                            label="Tipos de documento"
-                            name="userDocumentTypes"
-                            htmlFor="userDocumentTypes"
-                            options={documentTypes}
-                        />
                     <Outlet />
                 </main>
             </div>
