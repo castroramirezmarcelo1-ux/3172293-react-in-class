@@ -1,26 +1,18 @@
 import { useState } from "react";
-import { User } from "lucide-react";
+import { Menu } from "lucide-react";
 import {
+  // IconButton,
   IconButton,
+  Dropdown,
+  DropdownTrigger,
+  DropdownContent,
+  DropdownItem,
   SearchField,
 } from "@/shared";
 import  logo  from "@/assets/images/1-logo.png";
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
-import { logout } from "@/features/auth/services/logoutService";
-
 
 export default function Navbar(){
-
-
-  const navigate = useNavigate();
-
-
-  const handleLogout = () => {
-    logout();
-    navigate("/auth");
-  };
-
 
   // Componente de búsqueda 😂😂😂
   const [search, setSearch] = useState("");
@@ -35,21 +27,6 @@ export default function Navbar(){
     console.log("Campo limpiado");
   };
 
-
-  // Estado que controla el Switch
-   const [isActive, setIsActive] = useState(true);
-
-
-  //  Manejador del estado del switch 😂...
-  const handleStatusChange = (value) => {
-    setIsActive(value);
-
-
-    // Aquí generalmente va el llamado a una API
-    console.log("Nuevo estado", value)
-  }
-
-
     return (
       <nav className="w-full bg-transparent border-b-2">
         <div className="mx-auto max-w-7xl px-4">
@@ -60,16 +37,6 @@ export default function Navbar(){
                 <img src={logo} alt="logo" className="h-12" />
               </Link>
             </div>
-
-
-            {/* Switch */}
-            {/* inline-flex :Ocupa solo su contenido, no todo el ancho. */}
-            <Switch
-              checked={isActive}
-              onChange={handleStatusChange}
-              size="md"
-              className="hidden sm:inline-flex"
-            />
 
 
             {/* Links de navegación */}
@@ -99,52 +66,60 @@ export default function Navbar(){
               </li>
             </ul>
 
+            {/*SearchField + IconButton*/}
+            <div 
+            className="flex"
+            >
+                <SearchField
+                    value={search}
+                    onChange={setSearch}
+                    onSubmit={handleSearch}
+                    onClear={handleClear}
+                    placeholder="Buscar productos..."
+                    size="md"
+                    variant="outlined"
+                    className="w-76"
+                />
 
-            <SearchField
-              value={search}
-              onChange={setSearch}
-              onSubmit={handleSearch}
-              onClear={handleClear}
-              placeholder="Buscar productos..."
-              size="md"
-              variant="outlined"
-              className="w-76"
-            />
+                {/** Dropdown */}
+                <div 
+                className="ml-2"
+                >
 
+                  <Dropdown>
+                    <DropdownTrigger>
+                    <IconButton ariaLabel="Menu de Usuario">
+                      < Menu />
+                    </IconButton>
+                  </DropdownTrigger>
 
-            {/* Ícono de usuario */}
-            {/* ======= Dropdown ======= */}
-            <div className="p-10">
-              <Dropdown>
-                <DropdownTrigger>
-                  <IconButton ariaLabel="Menú de usuario">
-                    <User />
-                  </IconButton>
-                </DropdownTrigger>
+                  {/** Contenido */}
+                  <DropdownContent>
 
+                    <DropdownItem>
+                      Gestion de Productos
+                    </DropdownItem>
 
-                <DropdownContent className="right-0 w-48">
-                  <DropdownItem onClick={handleLogout}>
-                    Cerrar sesión
-                  </DropdownItem>
-                  <DropdownItem>
-                    <Link to="/dashboard" className="block w-full">
-                      Crear Usuario
-                    </Link>
-                  </DropdownItem>
-                  <DropdownItem>
-                    <Link to="/dashboard/userList" className="block w-full">
-                      Gestión usuarios
-                    </Link>
-                  </DropdownItem>
-                  <DropdownItem>
-                    <Link to="/dashboard/access" className="block w-full">
-                      Admin
-                    </Link>
-                  </DropdownItem>
-                </DropdownContent>
-              </Dropdown>
-            </div>
+                    <DropdownItem>
+                      Gestion de Usuario
+                    </DropdownItem>
+
+                    <DropdownItem>
+                      <Link to="/dashboard/userList" className="block w-full"> Listar Usuarios
+                      
+                      </Link>
+                    </DropdownItem>
+
+                    <DropdownItem>
+                      Cerrar Sesión
+                    </DropdownItem>
+
+                  </DropdownContent>
+                  </Dropdown>
+                  
+                </div>
+
+            </div>    
           </div>
         </div>
       </nav>

@@ -11,5 +11,16 @@ export { default as EffectDemo } from "./components/EffectDemo";
 export { default as CounterEffect } from "./components/CounterEffect";
 export { default as Select } from "./components/Select";
 export { default as Checkbox } from "./components/Checkbox";
-export { default as Iconbutton } from "./components/IconButton";
+export { default as IconButton } from "./components/IconButton";
+export { default as SearchField } from "./components/SearchField";
+export { default as StatusSwitch } from "./components/StatusSwitch";
+export { default as DataTable } from "./components/DataTable";
+export {
+    Dropdown,
+    DropdownTrigger, 
+    DropdownItem,
+    DropdownContent,
+} from "./components/Dropdown";
 
+// Layout Components
+export { default as Navbar } from "./layouts/Navbar";

@@ -4,14 +4,13 @@ export default function Input({
     htmlFor,
     type = "text",
     variant = "primary",
-    size = "sm",
+    size = "md",
     ...props
-}) {
-
+}){
     const variants = {
-            // Estos valores deben ser con variables
+        // Estos valores deben ser con variables
         primary: `
-            border-brand
+            border-brand 
             bg-background
         `,
         secondary: `
@@ -21,9 +20,10 @@ export default function Input({
         tertiary: `
             border-green-950
         `
-    };
+    }
 
-    const sizes = {
+        const sizes = {
+       
         sm: `
             h-8
         `,
@@ -32,20 +32,19 @@ export default function Input({
         `,
         lg: `
             h-12
-
         `
-    };
+    }
 
     return(
         <div className="w-80">
 
                 {/* Label */}
             <label 
-                // htmlFor con kebab-case
                 htmlFor={htmlFor}
                 className={`
                     block
                     text-caption
+                    mb-1
                     text-secondary
                     ${
                         size === "sm"
@@ -56,7 +55,6 @@ export default function Input({
                     }
                     ${error ? "border-red-800" : "text-caption"}
                 `}
-                
             >
                 {label}
             </label>
@@ -65,59 +63,54 @@ export default function Input({
             <div
                 className="
                     relative
-                    h-12
+                    h-10
                     flex
                     items-center
                 "
-            >
-
-                {/* Area interactiva invisivle (48px) */}
+            >   
+                {/* Área interactiva invisible (48px) */}
             <div
                 className="
-                    absolute
+                    absolute 
                     inset-0
                 "
-
                 onMouseDown={(e) => {
                     e.preventDefault();
-                    // Mueve el foco al siguiente nodo hermano en el DOM
-                    // nextSibling puede ser texto; si no es elemento valido, focus() falla
-                    e.currentTarget.nextSibling.focus()
+                    // Mueve el foco al siguiene nodo hermano en el DOM
+                    // nextSibling puede ser texto; si no es elemento válido,
+                    // focus() falla
+                    e.currentTarget.nextSibling.focus();
                 }}
-            />
 
+            />
                 {/* Input visual */}
             <input
-                id={htmlFor}
-                type={type}
-                className={`
-                    relative
-                    w-full
-                    rounded-md
-                    border
-                    px-4
-                    text-body
-
-                    focus:outline-none
-                    focus:ring-2
-                    focus:ring-ring
-                    focus:ring-brand
-                    ${variants[variant]}
-                    ${sizes[size]}
-                    ${error ? "border border-red-800": "border border-border"}
-                `}
-                {...props}
-            />
-
-            <div className="">
-                {/** Feedback */}
-                {error && (
-                    <p className="text-caption text-red-800 place-self-start   " >{error}</p>
-                )}
+            id = {htmlFor}
+            type = {type}
+            className ={`
+                w-full
+                rounded-md
+                border 
+                px-4
+                text-body
+            
+                focus:outline-none
+                focus:ring-2
+                focus:ring-ring
+                focus:ring-brand
+                ${variants[variant]}
+                ${sizes[size]}
+                ${error ? "border-red-800" : "border border-border"}
+            `}
+            {...props}
+            />    
             </div>
-
-            </div>
+            {/* Feedback */}
+            {error && (
+                <p className="text-caption text-red-800 place-self-start">{error}</p>
+            )}
 
         </div>
+        
     )
 }

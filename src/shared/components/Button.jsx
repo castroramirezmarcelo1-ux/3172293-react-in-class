@@ -15,14 +15,18 @@ export default function Button ({
 
     const sizes = {
         sm: `
-            h-8
+            h-10
             px-4
             before:absolute before:content-['']
             before:-inset-y-[8px] before:-inset-x-[0px]
             `,
 
-        md: `h-10 px-4 before:absolute before:content-['']
-        before:-inset-y-[4px] before:-inset-x-[0px] `
+        md: `
+            h-10 
+            px-4 
+            before:absolute before:content-['']
+            before:-inset-y-[4px] before:-inset-x-[0px] 
+            `
     }
     return(
         <button
@@ -33,7 +37,7 @@ export default function Button ({
                     rounded-md
                     translation-colors
 
-                    hover:bg-red-400
+                    hover:bg-green-600
                     ${variants[variant]}
                     ${sizes[size]}
                     `}
